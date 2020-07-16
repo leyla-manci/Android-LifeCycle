@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_main.*
 import lyl.manci.androidlifecycle.R
 import lyl.manci.androidlifecycle.util.logError
 
@@ -17,7 +18,9 @@ class MainActivity : AppCompatActivity() {
         "after super of oncreate".logError()
         setContentView(R.layout.activity_main)
         "after setcontentviewin oncreate".logError()
+
     }
+
 
 
     override fun onStart() {
@@ -42,7 +45,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        "after super of onStart".logError()
+        "after super of onDestroy".logError()
     }
 
     override fun onStop() {
@@ -83,10 +86,12 @@ class MainActivity : AppCompatActivity() {
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
         "after super of onRestoreInstanceState".logError()
+        specialMessage.setText(savedInstanceState.getString("name").toString())
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
+        outState.putString("name", specialMessage.text.toString())
         "after super of onSaveInstanceState".logError()
     }
 
