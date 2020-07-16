@@ -6,6 +6,6 @@ Android-LifeCycle
 
 
 
-* ****      : Leyla Akmancı | [leyla.manci@gmail.com](mailto:leyla.manci@gmail.com)
+* Leyla Akmancı | [leyla.manci@gmail.com](mailto:leyla.manci@gmail.com)
 
 
